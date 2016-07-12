@@ -70,4 +70,31 @@ class config
         "&champData=" . $parametersToGet . "&api_key=" . self::$leagueOfLegendsAPIKey;
     }
 
+    static function callAPI($url = "")
+    {
+        $response = "";
+        if ($url != "" && $url != false && $url != null) {
+            try {
+                $response = file_get_contents($url);
+            } catch (\Exception $e) {
+                error_log("Exception cached when tryig to get content from URL: " . $e->getMessage());
+            }
+        } else {
+            error_log("The URL was empty");
+        }
+        return $response;
+    }
+
+    /******************************
+     *  Calls to the LoL methods  *
+     ******************************/
+
+    static function getChampionList()
+    {
+        $urlToCall = self::getChampionListURL("tags");
+        error_log("The call was to the URL: " . $urlToCall);
+        $res = self::callAPI($urlToCall);
+        return json_decode($res);
+    }
+
 }
