@@ -1,6 +1,6 @@
 <?php
 
-namespace config;
+namespace connection;
 
 /**
  * Created by PhpStorm.
@@ -8,7 +8,7 @@ namespace config;
  * Date: 11/07/2016
  * Time: 18:50
  */
-class config
+class LeagueOfLegendsAPI
 {
     private static $leagueOfLegendsAPIKey = "RGAPI-63AA8D59-2A45-4846-8BE7-DC7E876A4630";
     private static $regions = array("br", "eune", "euw", "jp", "kr", "lan", "las", "na", "oce", "pbe", "ru", "tr");

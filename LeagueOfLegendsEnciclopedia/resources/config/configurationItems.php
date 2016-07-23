@@ -12,6 +12,15 @@ class configurationItems
     /**
      * Defined all the paths for the images
      */
-    public static $PathImages = __DIR__."images/";
-    public static $PathGeneralImages = __DIR__."images/general/";
+    public static $PathImages = "images/";
+    public static $PathGeneralImages = "images/general/";
+
+    public static function getDirectory($resource = "")
+    {
+        if($resource!=""){
+            return $_SERVER['DOCUMENT_ROOT'].$resource;
+        }else{
+            return $_SERVER['DOCUMENT_ROOT'];
+        }
+    }
 }

@@ -5,14 +5,22 @@
  * Date: 12/07/2016
  * Time: 19:16
  */
+
+include_once $_SERVER['DOCUMENT_ROOT']."resources/config/configurationItems.php";
+include_once \config\configurationItems::getDirectory("resources/connection/LeagueOfLegendsApi.php");
+include_once \config\configurationItems::getDirectory("resources/pageItems/pageGenerator/htmlHelper.php");
+
+use connection\LeagueOfLegendsAPI;
+use htmlGenerator\htmlHelper;
+//use connection\LeagueOfLegendsAPI;
+
 // TODO fight with this ****
-echo realpath(__DIR__."resources/connection/LeagueOfLegendsAPI.php"); die();
-include_once __DIR__."resources/connection/LeagueOfLegendsAPI.php";
-include_once __DIR__."resources/classes/pageGenerator/htmlHelper.php";
+echo "test     <br/>";
+
 
 
 echo "Hello world!<br /><br />";
 
-echo \htmlGenerator\htmlHelper::getFavicon();
+echo htmlHelper::getFavicon();
 
-//var_dump(\config\config::getChampionList());
+var_dump(LeagueOfLegendsAPI::getChampionList());
