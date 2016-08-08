@@ -6,9 +6,11 @@
  * Time: 19:16
  */
 
+
 include_once $_SERVER['DOCUMENT_ROOT']."resources/config/configurationItems.php";
-include_once \config\configurationItems::getDirectory("resources/connection/LeagueOfLegendsApi.php");
-include_once \config\configurationItems::getDirectory("resources/pageItems/pageGenerator/htmlHelper.php");
+use config\configurationItems;
+include_once configurationItems::getDirectory("resources/connection/leagueOfLegendsApi.php");
+include_once configurationItems::getDirectory("resources/pageItems/pageGenerator/htmlHelper.php");
 
 use connection\LeagueOfLegendsAPI;
 use htmlGenerator\htmlHelper;
